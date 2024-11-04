@@ -6,5 +6,6 @@ h1 {
 .list {
   display: flex;
   margin-bottom: 30px;
-  gap: 25px;
+  justify-content: center;
+  gap: 20px;
 }
