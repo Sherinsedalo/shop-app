@@ -1,0 +1,10 @@
+h1 {
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+.list {
+  display: flex;
+  margin-bottom: 30px;
+  gap: 25px;
+}
