@@ -31,7 +31,6 @@ function App() {
     <div className="App">
       <ProductList>
         <ProductCard product={products[0]} />
-
         <ProductCard product={products[1]} />
       </ProductList>
     </div>
