@@ -1,27 +1,13 @@
 import { useState } from "react";
 import "./ProductCard.css";
+import { QuantityIndicator } from "./QuantityIndicator";
 
 export function ProductCard({ product }) {
   const [showMore, setShowMore] = useState(false);
-
-  function QuantityIndicator() {
-    const [quantity, setQuantity] = useState(0);
-    const increment = () => setQuantity((prevQuantity) => prevQuantity + 1);
-    const decrement = () =>
-      setQuantity((prevQuantity) => Math.max(0, prevQuantity - 1));
-
-    return (
-      <div className="quantityBtnContainer">
-        <button className="quantityBtnDecrement" onClick={decrement}>
-          -
-        </button>
-        <span>{quantity}</span>
-        <button className="quantityBtnincrement" onClick={increment}>
-          +
-        </button>
-      </div>
-    );
-  }
+  const [quantity, setQuantity] = useState(0);
+  const specifications = product.specifications.map((spec, index) => (
+    <li key={index}>{spec}</li>
+  ));
 
   return (
     <article className="container">
@@ -38,18 +24,12 @@ export function ProductCard({ product }) {
         </button>
       </p>
 
-      {showMore && (
-        <ul className="specifications">
-          <li>{product.specifications[0]}</li>
-          <li>{product.specifications[1]}</li>
-          <li>{product.specifications[2]}</li>
-        </ul>
-      )}
+      {showMore && <ul className="specifications">{specifications}</ul>}
 
       <button className="purchaseBtn">
-        Ajouter au panier - {product.price}€ HT
+        Ajouter au panier - {product.price * quantity}€ HT
       </button>
-      <QuantityIndicator />
+      <QuantityIndicator quantity={quantity} setQuantity={setQuantity} />
     </article>
   );
 }

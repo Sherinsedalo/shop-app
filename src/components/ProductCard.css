@@ -65,20 +65,3 @@
   background-color: #0070e0;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
-
-.quantityBtnContainer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 2px solid #eeeeef;
-  border-radius: 10px;
-}
-
-.quantityBtnDecrement,
-.quantityBtnincrement {
-  background-color: #ffff;
-  height: 30px;
-  width: 20px;
-  border: 1px solid #c4c4d3;
-  border-radius: 5px;
-}

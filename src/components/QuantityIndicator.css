@@ -1,0 +1,17 @@
+.quantityBtnContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #eeeeef;
+  border-radius: 10px;
+}
+
+.quantityBtnDecrement,
+.quantityBtnincrement {
+  background-color: #ffff;
+  font-weight: bold;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #c4c4d3;
+  border-radius: 5px;
+}
