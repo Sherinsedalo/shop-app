@@ -8,7 +8,18 @@ import "./App.css";
 function App() {
   const [basket, setBasket] = useState([]);
   const addToBasket = (product, quantity) => {
-    setBasket((prevBasket) => [...prevBasket, { ...product, quantity }]);
+    setBasket((prevBasket) => {
+      const existingProductIndex = prevBasket.findIndex(
+        (item) => item.id === product.id
+      );
+      if (existingProductIndex !== -1) {
+        const updatedBasket = [...prevBasket];
+        updatedBasket[existingProductIndex].quantity += quantity;
+        return updatedBasket;
+      } else {
+        return [...prevBasket, { ...product, quantity }];
+      }
+    });
   };
   return (
     <div className="App">

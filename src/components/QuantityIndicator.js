@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./QuantityIndicator.css";
 
 export function QuantityIndicator({ quantity, setQuantity }) {

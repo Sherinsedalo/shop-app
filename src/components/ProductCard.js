@@ -9,8 +9,10 @@ export function ProductCard({ product, addToBasket }) {
     <li key={index}>{spec}</li>
   ));
   const handleAddToBasket = () => {
-    addToBasket(product, quantity);
-    setQuantity(0);
+    if (quantity > 0) {
+      addToBasket(product, quantity);
+      setQuantity(0);
+    }
   };
 
   return (
