@@ -1,7 +1,7 @@
 const products = [
   {
     id:1,
-    imageSrc: "/images/Reader.webp",
+    imageSrc: "./images/Reader.webp",
     title: "Zettle Reader 2",
     description: "Des paiements en toute simplicité!",
     specifications: [
@@ -13,7 +13,7 @@ const products = [
   },
   {
     id:2,
-    imageSrc: "/images/Terminal.webp",
+    imageSrc: "./images/Terminal.webp",
     title: "Zettle terminal",
     description: "Plus simple,mieux connecté,tout-en-un!",
     specifications: [
