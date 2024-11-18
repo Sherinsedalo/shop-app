@@ -1,0 +1,19 @@
+.homepageContainer {
+  display: flex;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+box-sizing: border-box;
+font-size: 25px;
+}
+
+h3{
+    text-decoration: underline;
+}
+
+.linkBtn {
+   text-decoration: none;
+}

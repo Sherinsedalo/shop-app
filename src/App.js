@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProductList } from "./components/ProductList.js";
 import { ProductCard } from "./components/ProductCard.js";
 import { ShoppingBasket } from "./components/ShoppingBasket.js";
+import {Link} from 'react-router-dom';
 import products from "./data";
 import "./App.css";
 
@@ -34,7 +35,9 @@ function App() {
   };
 
   return (
+  
     <div className="App">
+        <Link to={'/home'}> Home</Link>
       <ProductList>
         {products.map((product) => (
           <ProductCard
