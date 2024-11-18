@@ -21,18 +21,33 @@ function App() {
       }
     });
   };
+
+  const updatedBasketQuantity = (itemIndex, newQuantity) => {
+    setBasket((prevBasket) => {
+      const updatedBasket = [...prevBasket];
+      updatedBasket[itemIndex] = {
+        ...updatedBasket[itemIndex],
+        quantity: newQuantity,
+      };
+      return updatedBasket;
+    });
+  };
+
   return (
     <div className="App">
       <ProductList>
-        {products.map((product, index) => (
+        {products.map((product) => (
           <ProductCard
-            key={index}
+            key={product.id}
             product={product}
             addToBasket={addToBasket}
           />
         ))}
       </ProductList>
-      <ShoppingBasket basket={basket} />
+      <ShoppingBasket
+        basket={basket}
+        setBasketQuantity={updatedBasketQuantity}
+      />
     </div>
   );
 }

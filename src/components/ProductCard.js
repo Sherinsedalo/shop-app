@@ -8,6 +8,7 @@ export function ProductCard({ product, addToBasket }) {
   const specifications = product.specifications.map((spec, index) => (
     <li key={index}>{spec}</li>
   ));
+  
   const handleAddToBasket = () => {
     if (quantity > 0) {
       addToBasket(product, quantity);
