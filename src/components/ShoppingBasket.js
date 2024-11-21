@@ -1,12 +1,7 @@
 import { QuantityIndicator } from "./QuantityIndicator";
 import "./ShoppingBasket.css";
 
-export function ShoppingBasket({ basket, setBasketQuantity }) {
-  const total = basket.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
-
+export function ShoppingBasket({ basket, setBasketQuantity, total }) {
   return (
     <div className="shoppingBasket">
       <h2>Shopping Basket</h2>
