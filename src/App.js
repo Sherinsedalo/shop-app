@@ -6,6 +6,7 @@ import products from "./data";
 import "./App.css";
 import { BasketItem } from "./components/BasketItem.js";
 
+
 function App() {
   const { basket, addToBasket, updatedBasketQuantity, total } = BasketItem();
   return (

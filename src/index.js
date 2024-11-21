@@ -6,6 +6,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import NotFoundPage from "./pages/NotFoundPage";
+// import {CartProvider} from './context/CartContext';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    {/* <CartProvider> */}
     <RouterProvider router={router} />
+    {/* </CartProvider> */}
   </React.StrictMode>
 );
 
