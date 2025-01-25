@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ProductCard.css";
-import { QuantityIndicator } from "./QuantityIndicator";
+import { QuantityIndicator } from "../Quantity-Btns/QuantityIndicator";
 
 export function ProductCard({ product, addToBasket }) {
   const [showMore, setShowMore] = useState(false);
@@ -34,7 +34,7 @@ export function ProductCard({ product, addToBasket }) {
       {showMore && <ul className="specifications">{specifications}</ul>}
 
       <button className="purchaseBtn" onClick={handleAddToBasket}>
-        Ajouter au panier - {product.price * quantity}€ HT
+        Add to cart - {product.price * quantity}€ HT
       </button>
       <QuantityIndicator quantity={quantity} setQuantity={setQuantity} />
     </article>

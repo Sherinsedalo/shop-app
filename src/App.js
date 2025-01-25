@@ -1,32 +1,36 @@
-import { ProductList } from "./components/ProductList.js";
-import { ProductCard } from "./components/ProductCard.js";
-import { ShoppingBasket } from "./components/ShoppingBasket.js";
-import { Link } from "react-router-dom";
+import { ProductList } from "./components/Products/ProductList.js";
+import { ProductCard } from "./components/Products/ProductCard.js";
+import { ShoppingBasket } from "./components/Cart/ShoppingBasket.js";
+
 import products from "./data";
 import "./App.css";
-import { BasketItem } from "./components/BasketItem.js";
-
+import { BasketItem } from "./components/Cart/BasketItem.js";
+import { CartProvider } from "./store-contexts/cart-context.js";
+import { Header } from "./components/Header/Header";
 
 function App() {
   const { basket, addToBasket, updatedBasketQuantity, total } = BasketItem();
   return (
-    <div className="App">
-      <Link to={"/home"}> Home</Link>
-      <ProductList>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            addToBasket={addToBasket}
-          />
-        ))}
-      </ProductList>
-      <ShoppingBasket
+    <CartProvider value={{ basket, addToBasket, updatedBasketQuantity, total }}>
+      <div className="App">
+        <Header />
+        <ProductList>
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              addToBasket={addToBasket}
+            />
+          ))}
+        </ProductList>
+
+        {/* <ShoppingBasket
         basket={basket}
         setBasketQuantity={updatedBasketQuantity}
         total={total}
-      />
-    </div>
+      />   */}
+      </div>
+    </CartProvider>
   );
 }
 

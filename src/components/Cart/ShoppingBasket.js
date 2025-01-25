@@ -1,5 +1,6 @@
-import { QuantityIndicator } from "./QuantityIndicator";
+import { QuantityIndicator } from "../Quantity-Btns/QuantityIndicator";
 import "./ShoppingBasket.css";
+import { Link } from "react-router-dom";
 
 export function ShoppingBasket({ basket, setBasketQuantity, total }) {
   return (
@@ -7,7 +8,7 @@ export function ShoppingBasket({ basket, setBasketQuantity, total }) {
       <h2>Shopping Basket</h2>
 
       {basket.length === 0 ? (
-        <p>Votre panier est vide</p>
+        <p>Your basket is empty</p>
       ) : (
         <>
           <ul>
