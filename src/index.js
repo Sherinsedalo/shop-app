@@ -6,9 +6,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import NotFoundPage from "./pages/NotFoundPage";
-
-
-
+import { CartProvider } from "./store-contexts/cart-context.js";
+import { ShoppingBasket } from "./components/Cart/ShoppingBasket";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +18,7 @@ const router = createBrowserRouter([
     path: "/shop",
     element: <App />,
   },
-  
+  { path: "/basket", element: <ShoppingBasket /> },
   {
     path: "*",
     element: <NotFoundPage />,
@@ -29,7 +28,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>
 );
 

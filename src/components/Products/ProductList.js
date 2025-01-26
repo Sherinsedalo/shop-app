@@ -1,4 +1,6 @@
-import './ProductList.css'
+
+import './ProductList.css';
+
 export function ProductList(props) {
 
   return <div div className='products'>
