@@ -1,6 +1,7 @@
 import { QuantityIndicator } from "../Quantity-Btns/QuantityIndicator";
 import "./ShoppingBasket.css";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../store-contexts/cart-context";
 
 export function ShoppingBasket() {
@@ -10,15 +11,21 @@ export function ShoppingBasket() {
   const updateQuantity = (item, newQuantity) => {
     if (newQuantity === 0) {
       removeFromCart(item);
-    } else {
+    } else if (newQuantity > item.quantity) {
       addToCart({ ...item, quantity: newQuantity - item.quantity });
+    } else {
+      removeFromCart({ ...item, quantity: newQuantity - item.quantity });
     }
   };
 
   return (
     <div className="shoppingBasket">
+      <div className="shoppingBasketHeader">
+        <Link to="/shop" className="toShopBtn">
+          Go back to the shop
+        </Link>
+      </div>
       <h2>Shopping Basket</h2>
-
       {cartItems.length === 0 ? (
         <p>Your basket is empty</p>
       ) : (
@@ -38,6 +45,9 @@ export function ShoppingBasket() {
           </ul>
 
           <h3>To pay: {getCartTotal()} €HT</h3>
+          <button onClick={clearCart} className="clearBtn">
+            Empty cart
+          </button>
         </>
       )}
     </div>
