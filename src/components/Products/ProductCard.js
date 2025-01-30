@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./ProductCard.css";
-import { QuantityIndicator } from "./QuantityIndicator";
+import { QuantityIndicator } from "../Quantity-Btns/QuantityIndicator";
+import { CartContext } from "../../store-contexts/cart-context";
 
-export function ProductCard({ product, addToBasket }) {
+export function ProductCard({ product}) {
+
   const [showMore, setShowMore] = useState(false);
   const [quantity, setQuantity] = useState(0);
+const {addToCart} = useContext(CartContext);
+
   const specifications = product.specifications.map((spec, index) => (
     <li key={index}>{spec}</li>
   ));
   
   const handleAddToBasket = () => {
     if (quantity > 0) {
-      addToBasket(product, quantity);
+      addToCart({...product, quantity});
       setQuantity(0);
     }
   };
@@ -34,7 +38,7 @@ export function ProductCard({ product, addToBasket }) {
       {showMore && <ul className="specifications">{specifications}</ul>}
 
       <button className="purchaseBtn" onClick={handleAddToBasket}>
-        Ajouter au panier - {product.price * quantity}€ HT
+        Add to cart - {product.price * quantity}€ HT
       </button>
       <QuantityIndicator quantity={quantity} setQuantity={setQuantity} />
     </article>

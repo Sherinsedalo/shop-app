@@ -2,8 +2,7 @@ import "./QuantityIndicator.css";
 
 export function QuantityIndicator({ quantity, setQuantity }) {
   const increment = () => setQuantity(quantity + 1);
-  const decrement = () =>
-    setQuantity( Math.max(0, quantity - 1));
+  const decrement = () => setQuantity(Math.max(0, quantity - 1));
 
   return (
     <div className="quantityBtnContainer ">
