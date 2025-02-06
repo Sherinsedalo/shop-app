@@ -9,6 +9,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { CartProvider } from "./store-contexts/cart-context.js";
 import { ShoppingBasket } from "./components/Cart/ShoppingBasket";
 import { ShowsPage } from "./pages/ShowsPage";
+import { ShowDetail } from "./components/api/showDetails.js";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +21,11 @@ const router = createBrowserRouter([
     element: <App />,
   },
   { path: "/basket", element: <ShoppingBasket /> },
-  
-  { path: "/shows", element: <ShowsPage/> },
+
+  { path: "/shows", element: <ShowsPage /> },
+
+  { path: "/show/:id", element: <ShowDetail /> },
+
   {
     path: "*",
     element: <NotFoundPage />,

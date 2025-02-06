@@ -5,10 +5,11 @@ export const getShows = async () => {
 
   try {
     for (const name of showNames) {
-      const searchURL = `https://api.watchmode.com/v1/search/?apiKey=${API_KEY}&search_field=name&search_value=${encodeURIComponent(
-        name
-      )}`;
-      const searchResponse = await fetch(searchURL);
+      const searchResponse = await fetch(
+        `https://api.watchmode.com/v1/search/?apiKey=${API_KEY}&search_field=name&search_value=${encodeURIComponent(
+          name
+        )}`
+      );
       const searchData = await searchResponse.json();
 
       if (searchData.title_results.length > 0) {
@@ -23,6 +24,7 @@ export const getShows = async () => {
           title: showInfoData.title,
           description: showInfoData.plot_overview,
           genre: showInfoData.genre_names,
+          poster: showInfoData.poster_url,
         });
       }
     }
