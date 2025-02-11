@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 export function ShowsPage() {
   const [shows, setShows] = useState([]);
 
-  const handleChange = (e) => {
-    console.log("this is a change");
-  };
+  // const handleChange = (e) => {
+  //   console.log("this is a change");
+  // };
 
-  const handleInput = (e) => {
-    console.log("this was inputed");
-  };
+  // const handleInput = (e) => {
+  //   console.log("this was inputed");
+  // };
 
   useEffect(() => {
     getShows().then((data) => setShows(data));
@@ -27,7 +27,7 @@ export function ShowsPage() {
           <div key={show.id}>
             <h2>{show.title}:</h2>
             <p>{show.description}</p>
-            <p>{show.genre}</p> *
+            <p>{show.genre}</p>
             <Link to={{ pathname: `/show/${show.id}` }}>
               More details about this show
             </Link>

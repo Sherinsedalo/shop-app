@@ -24,14 +24,12 @@ export const getShows = async () => {
           title: showInfoData.title,
           description: showInfoData.plot_overview,
           genre: showInfoData.genre_names,
-          poster: showInfoData.poster_url,
         });
       }
     }
     return shows;
   } catch (e) {
     console.error("fetching error", e);
-
-    return "An error occured.Please try again.";
+    return [];
   }
 };
