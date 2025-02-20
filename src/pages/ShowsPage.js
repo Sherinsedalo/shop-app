@@ -1,21 +1,8 @@
-import { useState, useEffect } from "react";
-import { getShows } from "../components/api/showInfo";
 import { Link } from "react-router-dom";
+import { useShows } from "../store-contexts/ShowContext";
 
 export function ShowsPage() {
-  const [shows, setShows] = useState([]);
-
-  // const handleChange = (e) => {
-  //   console.log("this is a change");
-  // };
-
-  // const handleInput = (e) => {
-  //   console.log("this was inputed");
-  // };
-
-  useEffect(() => {
-    getShows().then((data) => setShows(data));
-  }, []);
+  const { shows } = useShows();
 
   return (
     <div>
