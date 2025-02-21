@@ -1,8 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useShows } from "../../store-contexts/ShowContext";
-
-//const API_KEY = "33gZNz0WLTxkEBQWSAAGlbiH9C90HEbB9DJcqRJ7";
-//const API_KEY = "NOQIgVpOUBSAZQuIDzSCO9qt0XLvF1pbTdQWpJHY ";
+import "./showDetails.css";
 
 export const ShowDetail = () => {
   const { id } = useParams();
@@ -13,10 +11,14 @@ export const ShowDetail = () => {
   if (!showDetails) return <p>information is loading</p>;
 
   return (
-    <div>
-      <h1>{showDetails.title}</h1>
-      <img src={showDetails.poster} alt={`${showDetails.title}'s Poster`} />
-      <p>{showDetails.description}</p>
+    <div className="details-container">
+      <h1 className="show-title">{showDetails.title}</h1>
+      <img
+        src={showDetails.poster}
+        alt={`${showDetails.title}'s Poster`}
+        className="show-poster"
+      />
+      <p className="show-description">{showDetails.description}</p>
       <p>{showDetails.genre}</p>
       <div>
         <iframe
@@ -36,12 +38,14 @@ export const ShowDetail = () => {
         {showDetails.netflixLink && (
           <p>
             <a href={showDetails.netflixLink}>
-              <button>Check it on netflix</button>
+              <button className="netflix-btn">Check it on netflix</button>
             </a>
           </p>
         )}
       </div>
-      <Link to="/home">Back to the homepage</Link>
+      <Link to="/home" className="homepage-btn">
+        Back to the homepage
+      </Link>
     </div>
   );
 };

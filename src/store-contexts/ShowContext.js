@@ -7,7 +7,7 @@ export const ShowProvider = ({ children }) => {
 
   useEffect(() => {
     const getShows = async () => {
-      //const API_KEY = "33gZNz0WLTxkEBQWSAAGlbiH9C90HEbB9DJcqRJ7";
+      //const API_KEY = "33gZNz0WLTxkEBQWSAAGlbiH9C90HEbB9DJcqRJ7"; -> maxed quota
       const API_KEY = "NOQIgVpOUBSAZQuIDzSCO9qt0XLvF1pbTdQWpJHY";
       const showNames = ["The vampire diaries", "Station 19", "This is us"];
       const shows = [];
@@ -38,7 +38,7 @@ export const ShowProvider = ({ children }) => {
               id: showID,
               title: showDetails.title,
               description: showDetails.plot_overview,
-              genre: showDetails.genre_names,
+              genre: showDetails.genre_names.join(", "),
               poster: showDetails.poster_url,
               trailer: showDetails.trailer,
               netflixLink: netflixSource ? netflixSource.web_url : null,
