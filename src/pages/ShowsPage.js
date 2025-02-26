@@ -17,12 +17,13 @@ export function ShowsPage() {
       <button onClick={() => setSorted(!sorted)} className="sorting-btn">
         {!sorted ? "sort by rating" : "reset sorting"}
       </button>
+  
       {sortedShows.length === 0 ? (
         <p>information is loading...</p>
       ) : (
         sortedShows.map((show) => (
-          <div key={show.id} className="show-card">
-            <h2>{show.title}:</h2>
+          <div key={show.id} className="show-card-content">
+            <h2 className="show-title">{show.title}:</h2>
             <p>{show.plot_overview}</p>
             <p>{show.genre_names.join(", ")}</p>
             <p>Critic Score: {show.critic_score}</p>

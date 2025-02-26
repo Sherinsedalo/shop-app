@@ -4,15 +4,15 @@ import "./Homepage.css";
 export const Homepage = () => {
   return (
     <div className="homepageContainer">
-      <h3>Welcome to the Reader shop!</h3>
+      <h3>Welcome!</h3>
       <p>What would you like to equip your store with?</p>
-      <div>
+      <div className="link-container">
         <Link to="/shop" className="linkBtn">
           {" "}
           Check out our Readers
         </Link>
         <br></br>
-        <Link to="/shows"> Go to the shows</Link>
+        <Link to="/shows" className="linkBtn" > Go to the shows</Link>
       </div>
     </div>
   );
