@@ -11,15 +11,19 @@ export const ShowDetail = () => {
   if (!showDetails) return <p>information is loading</p>;
 
   return (
-    <div className="details-container">
+    <div className="details-container" style={{backgroundImage: `url(${showDetails.backdrop})`}}>
+      <div className="details-content">
       <h1 className="show-title">{showDetails.title}</h1>
+      <div className="show-display">
       <img
         src={showDetails.poster}
         alt={`${showDetails.title}'s Poster`}
         className="show-poster"
       />
-      <p className="show-description">{showDetails.description}</p>
-      <p>{showDetails.genre}</p>
+      <p className="show-description">{showDetails.plot_overview}</p>
+    
+      </div>
+      <p>{showDetails.genre_names.join(', ')}</p>
       <div>
         <iframe
           width="560"
@@ -43,9 +47,13 @@ export const ShowDetail = () => {
           </p>
         )}
       </div>
+<div className="btn-container">
+      <Link to='/shows' className="to-shows-btn">Go back</Link>
       <Link to="/home" className="homepage-btn">
-        Back to the homepage
+       Homepage
       </Link>
+      </div>
+      </div>
     </div>
   );
 };
