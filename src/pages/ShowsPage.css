@@ -62,3 +62,11 @@
   background: #a893d7;
   color: #fff;
 }
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

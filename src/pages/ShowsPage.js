@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useShows } from "../store-contexts/ShowContext";
 import { useState } from "react";
 import "../pages/ShowsPage.css";
+import ReactStars from "react-rating-stars-component";
 
 export function ShowsPage() {
   const { shows } = useShows();
@@ -26,7 +27,15 @@ export function ShowsPage() {
             <h2 className="show-title">{show.title}:</h2>
             <p>{show.plot_overview}</p>
             <p>{show.genre_names.join(", ")}</p>
+            <div className="rating">
             <p>Critic Score: {show.critic_score}</p>
+            <ReactStars
+    count={5}
+   value={(show.critic_score/100)*5}
+    size={24}
+    activeColor="#ffd700"
+    edit={false}
+  /> </div>
             <Link to={{ pathname: `/show/${show.id}` }} className="details-btn">
               More details about this show
             </Link>

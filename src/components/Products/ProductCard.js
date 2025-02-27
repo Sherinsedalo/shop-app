@@ -21,7 +21,7 @@ const {addToCart} = useContext(CartContext);
   };
 
   return (
-    <article className="container">
+    <div className="container">
       <img src={product.imageSrc} alt={product.title} />
       <h3 className="title">{product.title} </h3>
       <p className="description">{product.description}</p>
@@ -41,6 +41,6 @@ const {addToCart} = useContext(CartContext);
         Add to cart - {product.price * quantity}€ HT
       </button>
       <QuantityIndicator quantity={quantity} setQuantity={setQuantity} />
-    </article>
+    </div>
   );
 }
