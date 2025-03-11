@@ -7,8 +7,8 @@ export const ShowProvider = ({ children }) => {
 
   useEffect(() => {
     const getShows = async () => {
-      //const API_KEY = "33gZNz0WLTxkEBQWSAAGlbiH9C90HEbB9DJcqRJ7"; -> maxed quota
-      const API_KEY = "NOQIgVpOUBSAZQuIDzSCO9qt0XLvF1pbTdQWpJHY";
+      //const API_KEY = "33gZNz0WLTxkEBQWSAAGlbiH9C90HEbB9DJcqRJ7"; first key
+     // const API_KEY = "NOQIgVpOUBSAZQuIDzSCO9qt0XLvF1pbTdQWpJHY";
       const showNames = ["The vampire diaries", "Station 19", "This is us"];
       const shows = [];
 
@@ -45,7 +45,7 @@ export const ShowProvider = ({ children }) => {
             });
           }
         }
-        setShows(shows);
+        setShows([...shows]);
       } catch (e) {
         console.error("fetching error", e);
         return [];

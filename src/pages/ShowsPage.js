@@ -16,7 +16,7 @@ export function ShowsPage() {
             <h2>{show.title}:</h2>
             <p>{show.description}</p>
             <p>{show.genre}</p>
-            <Link to={{ pathname: `/show/${show.id}` }} className="details-btn">
+            <Link to={`/show/${show.id}`} className="details-btn">
               More details about this show
             </Link>
           </div>
