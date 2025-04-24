@@ -25,7 +25,7 @@ export function ShoppingBasket() {
           Go back to the shop
         </Link>
       </div>
-      <h2>Shopping Basket</h2>
+      <h1>Shopping Basket</h1>
       {cartItems.length === 0 ? (
         <p>Your basket is empty</p>
       ) : (
