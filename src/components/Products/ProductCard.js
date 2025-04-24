@@ -7,7 +7,7 @@ export function ProductCard({ product}) {
 
   const [showMore, setShowMore] = useState(false);
   const [quantity, setQuantity] = useState(0);
-const {addToCart} = useContext(CartContext);
+  const {addToCart} = useContext(CartContext);
 
   const specifications = product.specifications.map((spec, index) => (
     <li key={index}>{spec}</li>
@@ -23,7 +23,8 @@ const {addToCart} = useContext(CartContext);
   return (
     <article className="container">
       <img src={product.imageSrc} alt={product.title} />
-      <h3 className="title">{product.title} </h3>
+      <h1 className="title">{product.title} </h1>
+      <h4>{"Product description: "}</h4>  
       <p className="description">{product.description}</p>
       <p className="specifications">
         Product details:
